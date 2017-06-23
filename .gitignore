@@ -1,0 +1,5 @@
+# gitignore for PyCharm
+
+*.idea
+*.iml
+*.xml
