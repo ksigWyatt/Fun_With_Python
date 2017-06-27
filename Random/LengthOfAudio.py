@@ -1,6 +1,20 @@
-import mad
+import wave
+import contextlib
 
+# assign the file to the audio source
+audio = 'C:\Users\wyatt\Desktop\chapter.wav'
 
-# how to find the length of an audio file
-mf = mad.MadFile("\Uploads\79862bbc-5aa2-11e7-907b-a6006ad3dba0\chapter.wav")
-track_length_in_milliseconds = mf.total_time()
+#read the file
+with contextlib.closing(wave.open(audio, 'r')) as f:
+    #get the number of frames in the file
+    frames = f.getnframes()
+    #get the frame rate
+    rate = f.getframerate()
+    #calculate duration
+    duration = frames / float(rate)
+    #seconds of length
+    print duration,'seconds long'
+
+    #calculate minutes
+    minutes = duration / 60
+    print float(minutes)
