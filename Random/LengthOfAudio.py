@@ -3,14 +3,14 @@ from tinytag import TinyTag
 
 
 # assign the file to the audio source
-#audio = 'C:/Users/wyatt/Downloads/chapter.mp3'
-audio = 'C:/Users/wyatt/Downloads/chapter.mp3'
+audio = 'C:/Users/wyatt/Downloads/Chapter.wav'
+# audio = 'C:/Users/wyatt/Desktop/text.wav'
 
 
 tag = TinyTag.get(audio)
 print (float(tag.filesize) / 1000000), "MB"
 print ""
-print tag
+print tag.artist
 print ""
 print 'It is %f seconds long.' % tag.duration
 print ""
