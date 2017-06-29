@@ -3,7 +3,7 @@ from tinytag import TinyTag
 
 
 # assign the file to the audio source
-audio = 'C:/Users/wyatt/Downloads/Chapter.wav'
+audio = 'C:/Users/wyatt/Desktop/Chapter.wav'
 # audio = 'C:/Users/wyatt/Desktop/text.wav'
 
 
@@ -14,6 +14,8 @@ print file.artist
 print ""
 print 'It is %f seconds long.' % file.duration
 print ""
+
+print type(file.artist)
 
 # # read the file
 # with contextlib.closing(wave.open(audio, 'r')) as f:
