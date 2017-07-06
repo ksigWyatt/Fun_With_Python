@@ -5,6 +5,7 @@
 *.xml
 *.pyc
 *.json
+MetadataModule.py
 
 # ignore audio files
 *.wav
