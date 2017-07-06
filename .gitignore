@@ -1,9 +1,11 @@
 # gitignore for PyCharm
 
-*.idea
+/.idea/*
 *.iml
 *.xml
 *.pyc
+*.json
 
 # ignore audio files
 *.wav
+*.mp3
