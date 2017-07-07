@@ -1,9 +1,10 @@
 # import wave, contextlib
+import os
 from tinytag import TinyTag
 
 
 # assign the file to the audio source
-audio = 'C:/Users/wyatt/Desktop/Chapter.wav'
+audio = 'chapter.wav' # hash = 2569318  2454630 2614374
 # audio = 'C:/Users/wyatt/Desktop/text.wav'
 
 
@@ -13,34 +14,19 @@ print ""
 print file.artist
 print ""
 print 'It is %f seconds long.' % file.duration
+print "The hash value is", file.__hash__()
+
 print ""
 
-print type(file.artist)
-
-# # read the file
-# with contextlib.closing(wave.open(audio, 'r')) as f:
-#     #get the number of frames in the file
-#     frames = f.getnframes()
-#     #get the frame rate
-#     rate = f.getframerate()
-#     #calculate duration
-#     duration = frames / float(rate)
-#     #seconds of length
-#     print duration,'Seconds long'
-#
-#     #calculate minutes
-#     minutes = duration / 60
-#     print float(minutes), "Minutes long"
-#     print ""
-#     print f.tell()
-#     f.close()
+wav = 'chapter.mp3' #output.wav hash = 2569339
+filez = TinyTag.get(wav)
+print (float(filez.filesize) / 1000000), "MB"
+print ""
+print filez.artist
+print ""
+print 'It is %f seconds long.' % filez.duration
+print "The hash value is", filez.__hash__()
 
 
-
-# wavFile = wave.open(audio)
-# length = wavFile.getnframes()
-
-# for i in range(0, length):
-#     waveData = wavFile.readframes(1)
-#     data = struct.unpack("<h", waveData)
-    # print int(data[0])
+os.remove("output.wav")
+print("File Removed!")

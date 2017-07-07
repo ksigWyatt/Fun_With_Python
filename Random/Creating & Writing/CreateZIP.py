@@ -12,18 +12,19 @@ filesInZip = []
 # for all files, sub-folders in a directory
 for subdir, dirs, files in os.walk(directory):
     # look at all the files
-    print
+    print filePath
     for file in files:
         # store the absolute path which is is it's subdir and where the os step is
         filePath = subdir + os.sep + file
-        print filePath
+        # print filePath
 
         # if the file is audio
         if filePath.endswith(".wav") or filePath.endswith(".mp3"):
             # Add to array so it can be added to the archive
+            print file
             inputFile = filePath.title().lower()
-            print file.title().lower()
-            print inputFile
+            # print file.title().lower()
+            # print inputFile
 #
 # # using zip file create a file called zipped_file.zip
 # # adding the members ot filesInZip array to the compressed file
